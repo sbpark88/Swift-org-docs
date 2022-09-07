@@ -1,16 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='6.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'>
-    <pages>
-        <page name='1. String Literals'/>
-        <page name='2. Initializing an Empty string'/>
-        <page name='3. Strings Are Value Types'/>
-        <page name='4. Concatenating Strings and Characters'/>
-        <page name='5. String Interpolation'/>
-        <page name='6. Unicode'/>
-        <page name='7. Counting Characters'/>
-        <page name='8. Accessing and Modifying a String'/>
-        <page name='9. Substrings'/>
-        <page name='10. Comparing Strings'/>
-        <page name='11. Unicode Representations of Strings'/>
-    </pages>
-</playground>
+<playground version='6.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'/>
