@@ -8,7 +8,8 @@ print("string1 + string2 = \(string1 + string2)")  // welcome now equals "hello 
 
 print("\nString + Character can be string.append() method, not addition operator(+)")
 let exclamationMark: Character = "!"
-print("string1.append(exclamationMark) = \(string1.append(exclamationMark))")
+string1.append(exclamationMark)
+print("string1.append(exclamationMark) = \(string1)")
 
 print("\nConcatenating of The Multiline String Literals")
 let badStart = """
