@@ -1,4 +1,4 @@
-# Swift-org-docs
+# Swift-org-docs (Swift 5.7)
 
 ---
 
@@ -28,7 +28,7 @@ Chapter 23 - Opaque Types
 Chapter 24 - Automatic Reference Counting  
 Chapter 25 - Memory Safety  
 Chapter 26 - Access Control  
-Chapter 27 - Advanced Operators  
+Chapter 27 - Advanced Operators
 
 
 Ref: https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html
