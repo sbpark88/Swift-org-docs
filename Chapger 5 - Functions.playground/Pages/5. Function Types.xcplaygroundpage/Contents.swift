@@ -51,14 +51,14 @@ func stepBackward(_ input: Int) -> Int {
     return input - 1
 }
 
-func chooseStepFunction(backword: Bool) -> (Int) -> Int {
-    backword ? stepBackward(_:) : stepForward(_:)
+func chooseStepFunction(backward: Bool) -> (Int) -> Int {
+    backward ? stepBackward(_:) : stepForward(_:)
 }
 
 
 func movingStart(initialValue: Int) {
     var currentValue = initialValue
-    let moveNearToZero = chooseStepFunction(backword: currentValue > 0)
+    let moveNearToZero = chooseStepFunction(backward: currentValue > 0)
 
     print("Conting to zero:")
     while currentValue != 0 {
