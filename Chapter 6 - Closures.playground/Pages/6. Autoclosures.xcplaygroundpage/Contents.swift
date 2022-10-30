@@ -70,3 +70,23 @@ for customerProvider in customerProviders {
 //[(Function), (Function)]
 //Now serving Chris!
 //Now serving Alex!
+
+
+print("-------------------------------------------")
+// 4. Compare with TypeScript
+
+// Function Declarations
+func greetingMessage() -> String {
+    return "Hello~ Swift"
+}
+print(greetingMessage())            // Hello~ Swift
+
+// Function Expressions with closures
+let anotherGreetingMessage = { () -> String in
+    return "Hello~ Swift"
+}
+print(anotherGreetingMessage())     // Hello~ Swift
+
+// Autoclosures
+let theOtherGreetingMessage = { "Hello~ Siwft" }
+print(theOtherGreetingMessage())    // Hello~ Swift
