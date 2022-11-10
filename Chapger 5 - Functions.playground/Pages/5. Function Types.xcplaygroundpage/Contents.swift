@@ -16,13 +16,24 @@ import Foundation
 //print(mathFunction(5, 7))   // 35
 
 
-let addTwoInts: (Int, Int) -> Int = { (_ a: Int, _ b: Int) in
-    a + b
-}
+//let addTwoInts: (Int, Int) -> Int = { (_ a: Int, _ b: Int) in
+//    a + b
+//}
+//
+//let multiplyTwoInts = { (_ a: Int, _ b: Int) in
+//    a * b
+//}
+//
+//print(addTwoInts(5, 7))         // 12
+//print(multiplyTwoInts(5, 7))    // 35
 
-let multiplyTwoInts = { (_ a: Int, _ b: Int) in
-    a * b
-}
+
+// With typealias
+typealias arithmeticCalc = (Int, Int) -> Int
+
+let addTwoInts: arithmeticCalc = { $0 + $1 }
+let multiplyTwoInts: arithmeticCalc = { $0 * $1 }
+
 
 print(addTwoInts(5, 7))         // 12
 print(multiplyTwoInts(5, 7))    // 35
