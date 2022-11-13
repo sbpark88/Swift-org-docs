@@ -5,8 +5,8 @@ func twice(_ f: @escaping (Int) -> Int) -> (Int) -> Int {
     { f(f($0)) }
 }
 
-//typealias intToInt = (Int) -> Int
-//
+typealias intToInt = (Int) -> Int
+
 //func twice(_ f: @escaping intToInt) -> intToInt {
 //    { f(f($0)) }
 //}
@@ -24,7 +24,11 @@ print(someFunction(12)) // 18   (12 + 3) + 3
 
 print("---------------------------------------")
 // 2. Function Expressions
-//let twice2 = { (f: @escaping (Int) -> Int) in
+//func twice2(_ f: @escaping (Int) -> Int) -> (Int) -> Int {
+//    { f(f($0)) }
+//}
+
+//func twice2(_ f: @escaping intToInt) -> intToInt {
 //    { f(f($0)) }
 //}
 
@@ -32,16 +36,12 @@ print("---------------------------------------")
 //    { f(f($0)) }
 //}
 
-
-let twice2: (@escaping (Int) -> Int) -> (Int) -> Int = { f in
+let twice2: (@escaping intToInt) -> intToInt = { f in
     { f(f($0)) }
 }
 
-//let twice2: (@escaping intToInt) -> intToInt = { f in
-//    { f(f($0)) }
-//}
-
-let plusThree2: (Int) -> Int = { $0 + 3 }
+//let plusThree2: (Int) -> Int = { $0 + 3 }
+let plusThree2: intToInt = { $0 + 3 }
 
 let someFunction2 = twice2(plusThree2)
 
