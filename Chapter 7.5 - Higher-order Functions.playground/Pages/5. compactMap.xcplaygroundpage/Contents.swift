@@ -41,3 +41,22 @@ print("-----------------------------------------")
 let withDefaultValue = numbersWithNil.map { $0 != nil ? $0! * 2 : -1 }
 print(type(of: withDefaultValue))   // Array<Int>
 print(withDefaultValue)             // [10, 30, -1, 6, 18, 24, -1, -1, 34, -1]
+
+
+print("-----------------------------------------")
+// 4. another usage
+let coins = ["1", "5", "$", "10", "6"]
+
+//var validCoins: [Int] = []
+//
+//for coin in coins {
+//    guard let coin = Int(coin) else { continue }
+//    validCoins.append(coin)
+//}
+//
+//print(validCoins)   // [1, 5, 10, 6]
+
+
+// compactMap
+let validCoins = coins.compactMap { Int($0) }
+print(validCoins)   // [1, 5, 10, 6]
