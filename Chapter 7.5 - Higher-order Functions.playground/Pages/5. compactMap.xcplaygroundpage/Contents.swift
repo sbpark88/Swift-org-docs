@@ -38,6 +38,7 @@ print(anotherWay)           // [10, 30, 6, 18, 24, 34]
 
 print("-----------------------------------------")
 // 3. default value
+//let withDefaultValue = numbersWithNil.compactMap { $0 != nil ? $0! * 2 : -1 }
 let withDefaultValue = numbersWithNil.map { $0 != nil ? $0! * 2 : -1 }
 print(type(of: withDefaultValue))   // Array<Int>
 print(withDefaultValue)             // [10, 30, -1, 6, 18, 24, -1, -1, 34, -1]
