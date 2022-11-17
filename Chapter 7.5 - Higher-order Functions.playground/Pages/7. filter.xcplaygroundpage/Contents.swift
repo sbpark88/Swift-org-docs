@@ -65,16 +65,16 @@ print(numbersWithNil.map { $0 != nil ? $0! : 0 })            // [1, 2, 0, 5, 0, 
 
 
 let sumWithFilter = numbersWithNil.lazy
-        .filter { $0 != nil }
-        .reduce(0) { $0 + $1! }
+    .filter { $0 != nil }
+    .reduce(0) { $0 + $1! }
 
 let sumWithCompactMap = numbersWithNil.lazy
-        .compactMap { $0 != nil ? $0 : nil }
-        .reduce(0) { $0 + $1 }
+    .compactMap { $0 != nil ? $0 : nil }
+    .reduce(0) { $0 + $1 }
 
 let sumWithMap = numbersWithNil.lazy
-        .map { $0 != nil ? $0! : 0 }
-        .reduce(0) { $0 + $1 }
+    .map { $0 != nil ? $0! : 0 }
+    .reduce(0) { $0 + $1 }
 
 let sumWithReduce = numbersWithNil.reduce(0) { $0 + ($1 ?? 0) }
 
@@ -82,3 +82,35 @@ print("sumWithFilter:       \(sumWithFilter)")
 print("sumWithCompactMap:   \(sumWithCompactMap)")
 print("sumWithMap:          \(sumWithMap)")
 print("sumWithReduce:       \(sumWithReduce)")
+
+
+print("-----------------------------------------")
+// 3. Application of Filter
+
+//class Tester {
+//    var name: String
+//    var age: Int
+//
+//    init(name: String, age: Int) {
+//        self.name = name
+//        self.age = age
+//    }
+//}
+
+struct Tester {
+    var name: String
+    var age: Int
+}
+
+let testers: [Tester] = [Tester(name: "John", age: 23),
+                         Tester(name: "Lucy", age: 25),
+                         Tester(name: "Tom", age: 32),
+                         Tester(name: "Mike", age: 29),
+                         Tester(name: "Hellen", age: 19),
+                         Tester(name: "Jim", age: 35),
+                         Tester(name: "Jamie", age: 30)]
+
+// name start "J" and age equal and over 30
+let result: [Tester] = testers.filter { $0.name.prefix(1) == "J" && $0.age >= 30 }
+
+result.forEach { print("\($0.name), \($0.age)") }
