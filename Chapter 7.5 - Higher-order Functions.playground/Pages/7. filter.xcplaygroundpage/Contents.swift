@@ -8,7 +8,7 @@ print(graterThanOrEqualNinety)  // [100, 93, 96]
 
 
 print("-----------------------------------------")
-let words: [String] = ["room", "home", "train", "green", "heroe"]
+let words: [String] = ["room", "home", "train", "green", "hero"]
 
 //var wordsWithO: [String] = []
 //
@@ -52,7 +52,7 @@ let words: [String] = ["room", "home", "train", "green", "heroe"]
 
 let wordsWithO: [String] = words.filter { $0.contains("o") }
 
-print(wordsWithO)   // ["room", "home", "heroe"]
+print(wordsWithO)   // ["room", "home", "hero"]
 
 
 print("-----------------------------------------")
