@@ -1,6 +1,6 @@
 import Foundation
 
-let words: [String] = ["room", "home", "train", "green", "hero"]
+let words: [String] = ["room", "home", "train", "green", ""]
 
 // 1. contains(_:)
 // Check whether the array 'words' having "train"
@@ -69,15 +69,15 @@ print("-----------------------------------------")
 
 print("-----------------------------------------")
 // 2. contains(where:)
-let isIncluded: Bool = words.contains { $0.contains("e") && $0.count >= 5 }
+let isIncluded: Bool = words.contains { $0.contains("e") && $0.count >= 4 }
 print(isIncluded)   // true
 
 
 //let wordsWithO = words.filter { $0.contains("o") }
-//print(wordsWithO)   // ["room", "home", "hero"]
+//print(wordsWithO)   // ["room", "home", ""]
 
-let wordsWithO = words.filter { $0.contains("o") && $0.count >= 5 }
-print(wordsWithO)   // ["hero"]
+let wordsWithO = words.filter { $0.contains("o") && $0.count >= 4 }
+print(wordsWithO)   // ["heroe"]
 
 
 print("-----------------------------------------")
