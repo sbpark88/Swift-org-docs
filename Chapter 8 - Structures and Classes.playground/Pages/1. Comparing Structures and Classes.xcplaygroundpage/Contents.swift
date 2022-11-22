@@ -50,6 +50,7 @@ print("The width of someVideoMode is now \(someVideoMode.resolution.width)")
 var anotherResolution = Resolution()
 anotherResolution.width = 1600
 print("The width of anotherResolution is now \(anotherResolution.width)")
+// Prints "The width of anotherResolution is now 1600"
 
 
 print("---------------------------------------")
