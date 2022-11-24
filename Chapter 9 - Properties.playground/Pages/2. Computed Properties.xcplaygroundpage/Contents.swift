@@ -108,7 +108,7 @@ struct Rect {
 
 
 print("------------------------------------")
-// 3. Read-Only COmputed Properties
+// 3. Read-Only Computed Properties
 struct Classroom {
     let subject: Subject
     let maxStudents: Int
