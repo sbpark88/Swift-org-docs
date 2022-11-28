@@ -57,4 +57,3 @@ matrix[1, 0] = 3.2
 //matrix[2, 0] = 3.2  // __lldb_expr_13/1. Subscripts.xcplaygroundpage:45: Assertion failed: Index out of range
 
 print(matrix[1, 0]) // 3.2
-
