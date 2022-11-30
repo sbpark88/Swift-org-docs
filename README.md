@@ -15,8 +15,8 @@ Chapter 10 - Methods
 Chapter 11 - Subscripts  
 Chapter 12 - Inheritance  
 Chapter 13 - Initialization  
-Chpater 14 - Deinitialization  
-Chpater 15 - Optional Chaining  
+Chapter 14 - Deinitialization  
+Chapter 15 - Optional Chaining  
 Chapter 16 - Error Handling  
 Chapter 17 - Concurrency  
 Chapter 18 - Type Casting  
