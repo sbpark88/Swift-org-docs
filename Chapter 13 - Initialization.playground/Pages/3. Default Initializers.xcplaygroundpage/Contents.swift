@@ -56,4 +56,4 @@ struct Size {
 var square = Size()
 var rectangle = Size(width: 7.0)
 var anotherRectangle = Size(height: 12.0)
-var hugeSqure = Size(width: 100.0, height: 100.0)
+var hugeSquare = Size(width: 100.0, height: 100.0)
