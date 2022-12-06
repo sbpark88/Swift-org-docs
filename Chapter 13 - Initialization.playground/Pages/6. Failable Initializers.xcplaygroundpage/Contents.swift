@@ -154,22 +154,22 @@ if unknownUnit == nil {
 print("-------------------------------------")
 // 4. Porpagation of Initialization Failuer
 // `Failable Initializers` delegates to `Failable Initializers`
-class Product {
-    let name: String
-    init?(name: String) {
-        if name.isEmpty { return nil }
-        self.name = name
-    }
-}
-
-class CartItem: Product {
-    let quantity: Int
-    init?(name: String, quantity: Int) {
-        if quantity < 1 { return nil }
-        self.quantity = quantity
-        super.init(name: name)
-    }
-}
+//class Product {
+//    let name: String
+//    init?(name: String) {
+//        if name.isEmpty { return nil }
+//        self.name = name
+//    }
+//}
+//
+//class CartItem: Product {
+//    let quantity: Int
+//    init?(name: String, quantity: Int) {
+//        if quantity < 1 { return nil }
+//        self.quantity = quantity
+//        super.init(name: name)
+//    }
+//}
 
 //class CartItem: Product {
 //    let quantity: Int
@@ -182,25 +182,25 @@ class CartItem: Product {
 
 
 // `Failable Initializers` delegates to `Nonfailable Initializers`
-//class Product {
-//    let name: String
-//    init?(name: String) {
-//        if name.isEmpty { return nil }
-//        self.name = name
-//    }
-//}
-//
-//class CartItem: Product {
-//    let quantity: Int?
-//    init?(name: String, quantity: Int) {
-//        if quantity < 1 {
-//            self.quantity = nil
-//        } else {
-//            self.quantity = quantity
-//        }
-//        super.init(name: name)
-//    }
-//}
+class Product {
+    let name: String
+    init(name: String) {
+        self.name = name
+    }
+}
+
+class CartItem: Product {
+    let quantity: Int
+    init?(name: String, quantity: Int) {
+        if quantity < 1 {
+            self.quantity = -1
+        } else {
+            self.quantity = quantity
+        }
+        super.init(name: name)
+    }
+}
+
 
 if let twoSocks = CartItem(name: "sock", quantity: 2) {
     print("Item: \(twoSocks.name), quantity: \(String(describing: twoSocks.quantity))")
@@ -289,6 +289,32 @@ class AutomaticallyNamedDocument: Document {
         }
     }
 }
+
+// init!
+//class Document {
+//    var name: String?
+//    // this initializer creates a document with a nil name value
+//    init() {}
+//    // this initializer creates a document with a nonempty name value
+//    init!(name: String) {
+//        if name.isEmpty { return nil }
+//        self.name = name
+//    }
+//}
+//
+//class AutomaticallyNamedDocument: Document {
+//    override init() {
+//        super.init(name: "[Untitled]")
+//    }
+//    override init(name: String) {
+//        if name.isEmpty {
+//            super.init(name: "[Untitled]")
+//        } else {
+//            super.init(name: name)
+//        }
+//    }
+//}
+
 
 let unnamed = AutomaticallyNamedDocument()
 let contacts = AutomaticallyNamedDocument(name: "Contacts")
