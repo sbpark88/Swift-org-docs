@@ -71,14 +71,17 @@ print("--------------------------------------------")
 struct SomeStruct {
     var x = 10
     mutating func doSomething() {
-        someFunctionWithNonescapingClosure { x = 200 }  // Ok
-        someFunctionWithEscapingClosure { print("It's OK") }     // error: escaping closure captures mutating 'self' parameter
+        someFunctionWithNonescapingClosure { x = 200 }
+    }
+    func anotherDoSomething() {
+        someFunctionWithEscapingClosure { print("It's OK") }
     }
 }
 
 var valueTypeInstance = SomeStruct()    // It must be declared with `var` not `let`, due to `doSomething()` use mutating member.
-valueTypeInstance.doSomething()
 
+valueTypeInstance.doSomething()
 print(valueTypeInstance.x)  // 200
 
+valueTypeInstance.anotherDoSomething()
 completionHandlers[1]()     // It's OK
