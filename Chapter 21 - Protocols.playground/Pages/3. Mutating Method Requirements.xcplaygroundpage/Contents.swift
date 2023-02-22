@@ -1,10 +1,10 @@
 import Foundation
 
-protocol Togglable {
+protocol Toggleable {
     mutating func toggle()
 }
 
-enum OnOffSwitch: Togglable {
+enum OnOffSwitch: Toggleable {
     case off, on
     
     mutating func toggle() {
