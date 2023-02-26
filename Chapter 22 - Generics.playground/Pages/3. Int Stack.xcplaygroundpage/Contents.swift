@@ -19,3 +19,12 @@ print(intStack) // IntStack(items: [3, 2, 5, 8])
 intStack.pop()
 print(intStack) // IntStack(items: [3, 2, 5])
 
+struct StringStack {
+    var items: [String] = []
+    mutating func push(_ item: String) {
+        items.append(item)
+    }
+    mutating func pop() -> String {
+        items.removeLast()
+    }
+}
