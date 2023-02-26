@@ -1,7 +1,7 @@
 import Foundation
 
 protocol Container {
-    associatedtype Item
+    associatedtype Item: Equatable
     mutating func append(_ item: Item)
     var count: Int { get }
     subscript(i: Int) -> Item { get }
@@ -13,7 +13,7 @@ protocol SuffixableContainer: Container {
     func last() -> Suffix.Item
 }
 
-struct Stack<Element> {
+struct Stack<Element: Equatable> {
     // original Stack<Element> implementation
     var items: [Element] = []
     mutating func push(_ item: Element) {
@@ -34,6 +34,11 @@ extension Stack: Container {
     }
     subscript(i: Int) -> Element {
         items[i]
+    }
+    
+    // conformance to the Equatable protocol
+    static func == (lhs: Stack<Element>, rhs: Stack<Element>) -> Bool {
+        lhs.items == rhs.items
     }
 }
 
