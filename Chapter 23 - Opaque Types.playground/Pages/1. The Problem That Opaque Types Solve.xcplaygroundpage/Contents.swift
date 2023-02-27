@@ -18,7 +18,10 @@ struct Triangle: Shape {
 }
 
 let smallTriangle = Triangle(size: 3)
-print(smallTriangle)    // Triangle(size: 3)
+print(type(of: smallTriangle))  // Triangle
+
+print(smallTriangle)            // Triangle(size: 3)
+
 
 //var arr = ["*", "**", "***"]
 //print(arr)                          // ["*", "**", "***"]
@@ -38,6 +41,10 @@ struct FlippedShape<T: Shape>: Shape {
 }
 
 let flippedTriangle = FlippedShape(shape: smallTriangle)
+print(type(of: flippedTriangle))    // FlippedShape<Triangle>
+
+print(flippedTriangle.shape)        // Triangle(size: 3)
+
 print(flippedTriangle.draw())
 
 
@@ -52,4 +59,9 @@ struct JoinedShape<T: Shape, U: Shape>: Shape {
 }
 
 let joinedTriangles = JoinedShape(top: smallTriangle, bottom: flippedTriangle)
+print(type(of: joinedTriangles))    // JoinedShape<Triangle, FlippedShape<Triangle>>
+
+print(joinedTriangles.top)          // Triangle(size: 3)
+print(joinedTriangles.bottom)       // FlippedShape<Triangle>(shape: __lldb_expr_38.Triangle(size: 3))
+
 print(joinedTriangles.draw())
