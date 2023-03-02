@@ -52,13 +52,6 @@ func join<T: Shape, U: Shape>(_ top: T, _ bottom: U) -> some Shape {
     JoinedShape(top: top, bottom: bottom)
 }
 
-//let smallTriangle = Triangle(size: 3)
-//let opaqueJoinedTriangles = join(smallTriangle, flip(smallTriangle))
-//print(type(of: opaqueJoinedTriangles))  // JoinedShape<Triangle, FlippedShape<Triangle>>
-//print(opaqueJoinedTriangles)
-//print(opaqueJoinedTriangles.draw())
-
-
 //---
 
 
@@ -93,8 +86,3 @@ let smallSquare = Square(size: 2)
 let trapezoid = join(smallTriangle, join(smallSquare, fixedInvalidFlip(smallTriangle)))
 print(type(of: trapezoid))
 print(trapezoid.draw())
-
-
-// 5. repeat(shape:count:)
-
-

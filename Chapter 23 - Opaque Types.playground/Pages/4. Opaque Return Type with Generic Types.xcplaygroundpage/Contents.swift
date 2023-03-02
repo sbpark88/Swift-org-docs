@@ -31,8 +31,6 @@ struct JoinedShape<T: Shape, U: Shape>: Shape {
     }
 }
 
-
-
 struct Square: Shape {
     var size: Int
     func draw() -> String {

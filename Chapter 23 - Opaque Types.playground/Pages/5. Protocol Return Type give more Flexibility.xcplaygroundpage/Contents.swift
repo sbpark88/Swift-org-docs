@@ -53,35 +53,17 @@ func makeTrapezoid() -> some Shape {
     return trapezoid
 }
 
-//let trapezoid = makeTrapezoid()
-//
-//print(type(of: trapezoid))  // JoinedShape<Triangle, JoinedShape<Square, FlippedShape<Triangle>>>
-//
-//print(trapezoid.draw())
-
-
 // 2. flip(_:) & join(_:_:)
-func flip<T: Shape>(_ shape: T) -> some Shape {
-    FlippedShape(shape: shape)
-}
+//func flip<T: Shape>(_ shape: T) -> some Shape {
+//    FlippedShape(shape: shape)
+//}
 
 func join<T: Shape, U: Shape>(_ top: T, _ bottom: U) -> some Shape {
     JoinedShape(top: top, bottom: bottom)
 }
 
-//let smallTriangle = Triangle(size: 3)
-//let opaqueJoinedTriangles = join(smallTriangle, flip(smallTriangle))
-//print(type(of: opaqueJoinedTriangles))  // JoinedShape<Triangle, FlippedShape<Triangle>>
-//print(opaqueJoinedTriangles)
-//print(opaqueJoinedTriangles.draw())
 
-
-let smallTriangle = Triangle(size: 2)
-let smallSquare = Square(size: 2)
-let trapezoid = join(smallTriangle, join(smallSquare, flip(smallTriangle)))
-print(type(of: trapezoid))
-print(trapezoid.draw())
-
+//---
 
 
 // 3. invalidFlip(_:)
@@ -92,3 +74,17 @@ print(trapezoid.draw())
 //    }
 //    return FlippedShape(shape: shape) // Error: return types don't match
 //}
+
+func protocolFlip<T: Shape>(_ shape: T) -> Shape {
+    if shape is Square {
+        return shape
+    }
+    
+    return FlippedShape(shape: shape)
+}
+
+let smallTriangle = Triangle(size: 2)
+let smallSquare = Square(size: 2)
+let trapezoid = join(smallTriangle, join(smallSquare, protocolFlip(smallTriangle)))
+print(type(of: trapezoid))  // JoinedShape<Triangle, JoinedShape<Square, FlippedShape<Triangle>>>
+print(trapezoid.draw())
