@@ -52,6 +52,7 @@ func balance(_ x: Int, _ y: Int) -> (Int, Int) {
     let sum = x + y
     return (sum / 2, sum - x)
 }
+
 var playerOneScore = 42
 var playerTwoScore = 30
 let (lhs1, rhs1): (Int, Int) = balance(playerOneScore, playerTwoScore)
