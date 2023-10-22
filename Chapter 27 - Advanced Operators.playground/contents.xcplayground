@@ -1,2 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='6.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'/>
+<playground version='6.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'>
+    <pages>
+        <page name='1. Bitwise Operators'/>
+        <page name='3. Overflow Operators'/>
+        <page name='4. Precedence and Associativity'/>
+        <page name='5. Operator Methods'/>
+        <page name='6. Custom Operators'/>
+        <page name='7. Result Builders'/>
+    </pages>
+</playground>
