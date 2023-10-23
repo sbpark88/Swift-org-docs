@@ -12,21 +12,21 @@ print(potentialOverflow &- 1)   // 32766
 print(potentialOverflow &* 2)   // -2
 
 
-// Value Overflow for Unsigned Integers to Positive Direction
+// 1. Value Overflow for Unsigned Integers to Positive Direction
 var unsignedOverflow = UInt8.max
 printToBinary(number: unsignedOverflow)
 unsignedOverflow = unsignedOverflow &+ 1
 printToBinary(number: unsignedOverflow)
 
 
-// Value Overflow for Unsigned Integers to Negative Direction
+// 2. Value Overflow for Unsigned Integers to Negative Direction
 var anotherUnsignedOverflow = UInt8.min
 printToBinary(number: anotherUnsignedOverflow)
 anotherUnsignedOverflow = anotherUnsignedOverflow &- 1
 printToBinary(number: anotherUnsignedOverflow)
 
 
-// Value Overflow for Signed Integers to Negative Direction
+// 3. Value Overflow for Signed Integers to Negative Direction
 var signedOverflow = Int8.min
 printToBinary(number: signedOverflow)
 signedOverflow = signedOverflow &- 1

@@ -5,7 +5,7 @@
         <page name='2. Bitwise Shift Operator'/>
         <page name='3. Overflow Operators'/>
         <page name='4. Operator Methods'/>
-        <page name='5. Operator Methods'/>
+        <page name='5. Custom Operators'/>
         <page name='6. Custom Operators'/>
         <page name='7. Result Builders'/>
     </pages>

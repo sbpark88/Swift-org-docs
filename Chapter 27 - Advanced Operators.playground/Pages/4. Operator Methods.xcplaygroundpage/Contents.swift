@@ -5,7 +5,7 @@ struct Vector2D {
 }
 
 
-// Infix Operators
+// 1. Infix Operators
 extension Vector2D {
     static func + (lhs: Vector2D, rhs: Vector2D) -> Vector2D {
         Vector2D(x: lhs.x + rhs.x, y: lhs.y + rhs.y)
@@ -19,7 +19,7 @@ print("Combined Vector is (\(combinedVector.x), \(combinedVector.y)).")
 // Combined Vector is (5.0, 5.0).
 
 
-// Unary Operators
+// 2. Unary Operators
 // Prefix Operators
 extension Vector2D {
     static prefix func - (vector: Vector2D) -> Vector2D {
@@ -36,7 +36,7 @@ print("Also Positive Vector is (\(alsoPosotive.x), \(alsoPosotive.y)).")
 // Also Positive Vector is (3.0, 4.0).
 
 
-// Compund Assignment Operators
+// 3. Compund Assignment Operators
 // Addition Assignment Operator
 extension Vector2D {
     static func += (lhs: inout Vector2D, rhs: Vector2D) {
@@ -51,7 +51,7 @@ print("Original Vector is (\(original.x), \(original.y)) now.")
 // Original Vector is (4.0, 6.0) now.
 
 
-// Equivalence Operators
+// 4. Equivalence Operators
 // 직접 구현하기
 //extension Vector2D: Equatable {
 //    static func == (lhs: Vector2D, rhs: Vector2D) -> Bool {
